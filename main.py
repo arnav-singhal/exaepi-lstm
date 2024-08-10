@@ -18,9 +18,9 @@ else:
 print("Gathering data")
 with h5py.File("../1k/county_data.h5", 'r') as f:
 # with h5py.File("../1k/tract_data.h5", 'r') as f:
-    infection_data = f['data'][()]
+    infection_data = f['data'][()] / 1000
     infection_data = infection_data.reshape(*infection_data.shape[:-2], -1)
-    # withdrawn_data = f['withdrawn'][()]
+    # withdrawn_data = f['withdrawn'][()] / 1000
     # withdrawn_data = withdrawn_data.reshape(*withdrawn_data.shape[:-2], -1)
 
 # infection_data = data.embed_withdrawn(infection_data, withdrawn_data)
